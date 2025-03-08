@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  --font1: "Jost", serif;
+  --primary-color: #227ec1;
+  --secondary-color: #0cb4d9;
+  --hover-bg: rgba(255, 255, 255, 0.1);
+}
+/* General Styles */
+.zig-layout .container {
+    padding: 20px;
+    
+  }
+  
+  .zig-layout {
+    margin-bottom: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-family: var(--font1);
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+
+  /* Image Styles */
+  .zig-layout img {
+    border-radius: 10px; /* Rounded corners for images */
+    transition: transform 0.4s cubic-bezier(0.25, 0.45, 0.45, 0.95), box-shadow 0.4s ease-in-out;
+    width: 100%;
+    height: auto;
+    border: 3px solid #005c78; /* Light gold border */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .zig-layout img:hover {
+    transform: scale(1.05); /* Stronger zoom-in effect */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* More depth */
+  }
+  
+  /* Heading Styles */
+  .zig-layout h3 {
+    font-size: 28px; /* Larger heading size */
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #005c78; /* Deep Blue */
+    margin-bottom: 15px;
+    text-align: left; /* Align heading to the left */
+  }
+  
+  /* Content Styles */
+  .zig-layout p {
+    font-size: 17px; /* Comfortable content size */
+    line-height: 1.6; /* Improved readability */
+    color: #444; /* Darker Gray for better contrast */
+    text-align: justify; /* Justify text for a clean look */
+  }
+  
+  
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .zig-layout {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .zig-layout {
+      flex-direction: column; /* Stack columns on smaller screens */
+      text-align: center; /* Center-align content on mobile */
+    }
+  
+    .zig-layout h3 {
+      font-size: 24px; /* Smaller heading for mobile */
+      text-align: center; /* Center-align heading */
+    }
+  
+    .zig-layout p {
+      font-size: 14px; /* Smaller content size for mobile */
+      text-align: center; /* Center-align content */
+    }
+  
+    .zig-layout img {
+      margin-bottom: 20px; /* Add space between image and text */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .zig-layout h3 {
+      font-size: 20px; /* Even smaller heading for very small screens */
+    }
+  
+    .zig-layout p {
+      font-size: 12px; /* Smaller content size for very small screens */
+    }
+  
+    .zig-layout .btn {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  }
+  
+
+  /* Unique Class Names to Avoid Conflicts */
+.custom-slider-container {
+  padding: 10px;
+  font-family: var(--font1);
+  
+}
+
+.custom-slider-card {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.custom-slider-card-inner {
+  height: 200px; /* Fixed height */
+
+}
+
+@media (max-width: 768px) {
+  .custom-slider-card-inner {
+    height: 200px; /* Keep height consistent */
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-slider-card-inner {
+    height: 200px; /* Keep height the same */
+  }
+}
+
+
+.custom-slider-card-inner {
+  border: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  position: relative; /* Needed for absolute positioning */
+  overflow: hidden; /* Prevents overflow of hover effects */
+}
+.custom-slider-card-inner {
+  border: 2px solid #005c78; /* Adds a border */
+  background: #f8f9fa; /* Light grey background */
+}
+
+/* Icon Styling */
+.custom-slider-icon {
+  font-size: 2.5rem;
+  color: #005c78;
+  position: relative;
+  z-index: 2;
+  transition: color 0.5s ease-in-out;
+}
+
+/* Title & Price Styling */
+.custom-slider-title {
+  font-weight: bold;
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.custom-slider-price {
+  color: #555;
+  font-size: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Circular Hover Background Effect */
+.custom-slider-card-inner::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px; /* Small initial size */
+  height: 20px;
+  background: rgba(234, 228, 221, 0.6) !important; /* Updated to #EAE4DD with some transparency */
+  border-radius: 50%; /* Makes it a circle */
+  transform: translate(-50%, -50%) scale(0); /* Starts at the icon */
+  transition: transform 0.5s ease-in-out;
+  z-index: 1;
+}
+
+/* Underline Effect - Starts Small */
+.custom-slider-card-inner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  z-index: 2;
+  height: 4px;
+  background-color: #1A4870;
+  transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+}
+
+/* Hover Effect */
+.custom-slider-card-inner:hover::before {
+  transform: translate(-50%, -50%) scale(60); /* Expands the circle */
+}
+
+
+/* Hover Effects */
+.custom-slider-card-inner:hover {
+  transform: translateY(-5px);
+}
+
+
+.custom-slider-card-inner:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Change Icon Color on Hover */
+.custom-slider-card-inner:hover .custom-slider-icon {
+  color: #005c78;
+}
+
+
+
+.work .carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work .carousel-item-fixed {
+  min-height: 320px; /* Prevents height changes */
+  display: flex;
+  justify-content: center;
+  border-radius: 40px !important; /* Optional styling */
+
+}
+
+.work .carousel-image {
+  width: 600px; /* Fixed width */
+  height: 300px; /* Fixed height to avoid shifts */
+  object-fit: contain; /* Prevent stretching */
+  border-radius: 40px; /* Optional styling */
+}
+
+.work .carousel-control-prev,
+.work .carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease-in-out;
+}
