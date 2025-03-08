@@ -1,23 +1,6 @@
 # Ignore node modules
 node_modules/
-npm-debug.log
 
-# Ignore environment variables
-.env
-
-# Ignore build folders
-/build
-/dist
-
-# Ignore logs
-*.log
-logs/
-yarn-debug.log*
-yarn-error.log*
-
-# Ignore system files
-.DS_Store
-Thumbs.db
 
 # Ignore Git-related files
 .gitignore
