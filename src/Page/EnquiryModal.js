@@ -18,7 +18,7 @@ const EnquiryModal = ({ show, handleClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/send-email", formData);
+      const response = await axios.post("https://education-site-full-back.onrender.com/send-email", formData);
       alert(response.data.message);
       setFormData({ name: "", phone: "", email: "", type: "", location: "" });
       handleClose();
