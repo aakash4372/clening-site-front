@@ -58,27 +58,21 @@ export default function Carousel() {
     };
     return (
         <div>
-            <div id="mainCarousel"
-                className="carousel slide carousel-fade"
-                data-bs-ride="carousel"
-                data-bs-interval="3000"
-                data-bs-pause="false"
-                data-bs-touch="true">
 
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <img src={`${process.env.PUBLIC_URL}/img/swipe.png`} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={`${process.env.PUBLIC_URL}/img/sofaclean.png`} className="d-block w-100" alt="..." />
-                        
-                    </div>
-                    <div className="carousel-item">
-                        <img src={`${process.env.PUBLIC_URL}/img/floor.png`} className="d-block w-100" alt="..." />
-                        
-                    </div>
-                </div>
-            </div>
+            <div id="carouselExample" class="carousel slide carousel-fade" data-bs-touch="false"  data-bs-pause="false"  data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src={`${process.env.PUBLIC_URL}/img/c.png`} class="d-block w-100" alt="Imagefile 1"/>
+      </div>
+      <div class="carousel-item">
+        <img src={`${process.env.PUBLIC_URL}/img/d.png`}  class="d-block w-100" alt="Imagefile 2"/>
+      </div>
+      <div class="carousel-item">
+        <img src={`${process.env.PUBLIC_URL}/img/e.png`} class="d-block w-100" alt="Imagefile 3"/>
+      </div>
+    </div>
+  </div>
+            
 
 
 

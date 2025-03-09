@@ -127,135 +127,6 @@ html, body {
   color: white !important;
 }
 
-/* =======================
-   Carousel Styling
-   ======================= */
-   .carousel-item {
-    position: relative;
-    height: 85vh;
-    overflow: hidden;
-    opacity: 0;
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-    transform: scale(1.01);
-  }
-  
-  .carousel-item.active {
-    opacity: 1;
-    transform: scale(1);
-  }
-  
-  /* Ensuring images are fully visible and responsive */
-  .carousel-item img {
-    width: 100%;
-    height: 900px; /* Default height for large screens */
-    object-position: center;
-    object-fit: cover;
-    animation: zoomIn 6s ease-in-out infinite;
-  }
-  
-  /* =======================
-     Responsive Image Heights
-     ======================= */
-  
-  /* Large Screens (Desktops & Laptops) */
-  @media (max-width: 1200px) {
-    .carousel-item img {
-      height: 800px; 
-    }
-  }
-  
-  /* Tablets */
-  @media (max-width: 992px) {
-    .carousel-item img {
-      height: 600px; 
-    }
-  }
-  
-  /* Mobile devices */
-  @media (max-width: 768px) {
-    .carousel-item img {
-      height: 450px; 
-    }
-  }
-  
-  /* Small screens */
-  @media (max-width: 576px) {
-    .carousel-item img {
-      height: 350px; 
-    }
-  }
-  
-  /* Extra Small screens */
-  @media (max-width: 400px) {
-    .carousel-item img {
-      height: 300px; 
-    }
-  }
-  
-  /* =======================
-     Zoom Animation
-     ======================= */
-  @keyframes zoomIn {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.01);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  /* Adjusting carousel height for different screen sizes */
-  @media (max-width: 992px) {
-    .carousel-item {
-      height: 50vh;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .carousel-item {
-      height: 30vh;
-    }
-  }
-  
-  /* =======================
-     Carousel Caption Styling
-     ======================= */
-  .carousel-caption {
-    background: none;
-    text-shadow: none;
-    text-transform: uppercase;
-    color: white;
-  }
-  
-  .carousel-caption h2 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: white;
-    text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.678);
-  }
-  
-  /* Responsive text size */
-  @media (max-width: 992px) {
-    .carousel-caption h2 {
-      font-size: 2.5rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .carousel-caption h2 {
-      font-size: 2rem;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .carousel-caption h2 {
-      font-size: 1.5rem;
-    }
-  }
-  
 
 .who-we-are {
   padding: 40px 0;
@@ -792,4 +663,91 @@ hr {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #7fb3d5; /* Darker shade when hovered */
+}
+
+/* Ensure the carousel takes the full width and height of the viewport */
+.carousel {
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+}
+
+/* Ensure images are fully visible and not cut off */
+.carousel-item {
+  height: 100vh; /* Set the height of each carousel item to full viewport height */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  object-position:  center;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1440px) {
+  .carousel, .carousel-item {
+    height: 100vh; /* Adjust height for screens up to 1440px */
+  }
+  .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  object-position: center;
+}
+}
+
+@media (max-width: 1024px) {
+  .carousel, .carousel-item {
+    height: 90vh; /* Adjust height for screens up to 1024px */
+  }
+  .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  object-position: center;
+}
+}
+
+@media (max-width: 768px) {
+  .carousel, .carousel-item {
+    height: 80vh; /* Adjust height for screens up to 768px */
+  }
+}
+
+@media (max-width: 425px) {
+  .carousel, .carousel-item {
+    height: 50vh; /* Adjust height for screens up to 425px */
+  }
+  .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  object-position: center;
+}
+}
+
+@media (max-width: 320px) {
+  .carousel, .carousel-item {
+    height: 40vh; /* Adjust height for screens up to 320px */
+  }
+  .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  object-position: center;
+}
+}
+
+/* Enquiry Form Modal Styling */
+.modal-body {
+  padding: 20px;
+}
+
+.form-control {
+  border-radius: 8px;
+}
+
+button {
+  font-weight: bold;
 }
