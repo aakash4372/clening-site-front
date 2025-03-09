@@ -17,14 +17,16 @@ import Statistics from './Compnycount';
 export default function Carousel() {
     useEffect(() => {
         AOS.init();
-        const myCarousel = document.querySelector("#mainCarousel");
-        if (myCarousel) {
-            new window.bootstrap.Carousel(myCarousel, {
-                interval: 3000, // 3 seconds
-                ride: "carousel",
-                touch: true
-            });
-        }
+        const carouselElement = document.querySelector("#carouselExample");
+    if (carouselElement) {
+      new window.bootstrap.Carousel(carouselElement, {
+        interval: 3000, // Set the auto-scroll speed
+        ride: "carousel",
+        touch: true,
+        pause: false,
+      });
+    }
+
     }, []);
     const services = [
         {
