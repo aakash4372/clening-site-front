@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button, Form, Spinner } from "react-bootstrap";
 import axios from "axios";
-import toast, { Toaster } from "react-hot-toast"; // Import hot toast
+import toast, { Toaster } from "react-hot-toast";
 
 const EnquiryModal = ({ show, handleClose }) => {
   const [formData, setFormData] = useState({
@@ -12,7 +12,7 @@ const EnquiryModal = ({ show, handleClose }) => {
     location: "",
   });
 
-  const [loading, setLoading] = useState(false); // Loading state
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,36 +20,35 @@ const EnquiryModal = ({ show, handleClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Show loading spinner
+    setLoading(true);
     try {
       const response = await axios.post(
         "https://education-site-full-back.onrender.com/send-email",
         formData
       );
 
-      toast.success(response.data.message || "Enquiry sent successfully!"); // Show success toast
+      toast.success(response.data.message || "Enquiry sent successfully!");
       setFormData({ name: "", phone: "", email: "", type: "", location: "" });
       handleClose();
     } catch (error) {
-      toast.error("Error sending enquiry. Try again."); // Show error toast
+      toast.error("Error sending enquiry. Try again.");
       console.error(error);
     } finally {
-      setLoading(false); // Hide loading spinner
+      setLoading(false);
     }
   };
 
   return (
     <>
-      <Toaster position="top-center" reverseOrder={false} /> {/* Toast container */}
+      <Toaster position="top-center" reverseOrder={false} />
 
-      <Modal show={show} onHide={handleClose} centered>
+      <Modal show={show} onHide={handleClose} centered className="enquiry-modal">
         <Modal.Header closeButton>
           <Modal.Title>Enquiry Form</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit} className="p-2">
-            <Form.Group className="mb-3">
-              <Form.Label>Name</Form.Label>
+            <Form.Floating className="mb-3">
               <Form.Control
                 type="text"
                 name="name"
@@ -58,10 +57,10 @@ const EnquiryModal = ({ show, handleClose }) => {
                 onChange={handleChange}
                 required
               />
-            </Form.Group>
+              <Form.Label>Name</Form.Label>
+            </Form.Floating>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Phone</Form.Label>
+            <Form.Floating className="mb-3">
               <Form.Control
                 type="tel"
                 name="phone"
@@ -70,10 +69,10 @@ const EnquiryModal = ({ show, handleClose }) => {
                 onChange={handleChange}
                 required
               />
-            </Form.Group>
+              <Form.Label>Phone</Form.Label>
+            </Form.Floating>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Email</Form.Label>
+            <Form.Floating className="mb-3">
               <Form.Control
                 type="email"
                 name="email"
@@ -82,10 +81,10 @@ const EnquiryModal = ({ show, handleClose }) => {
                 onChange={handleChange}
                 required
               />
-            </Form.Group>
+              <Form.Label>Email</Form.Label>
+            </Form.Floating>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Type</Form.Label>
+            <Form.Floating className="mb-3">
               <Form.Control
                 type="text"
                 name="type"
@@ -94,10 +93,10 @@ const EnquiryModal = ({ show, handleClose }) => {
                 onChange={handleChange}
                 required
               />
-            </Form.Group>
+              <Form.Label>Type</Form.Label>
+            </Form.Floating>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Location</Form.Label>
+            <Form.Floating className="mb-3">
               <Form.Control
                 type="text"
                 name="location"
@@ -106,7 +105,8 @@ const EnquiryModal = ({ show, handleClose }) => {
                 onChange={handleChange}
                 required
               />
-            </Form.Group>
+              <Form.Label>Location</Form.Label>
+            </Form.Floating>
 
             <Button variant="primary" type="submit" disabled={loading} className="w-100">
               {loading ? <Spinner animation="border" size="sm" /> : "Submit"}

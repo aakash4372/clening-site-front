@@ -79,9 +79,16 @@ const MyOffcanvas = () => {
             </NavLink>
 
             {/* Button to Open Modal */}
-            <Button variant="outline-primary" className="mx-2" onClick={() => setModalShow(true)}>
+            <Button
+              variant="primary"
+              className="mx-2 text-white"
+              style={{ backgroundColor: "#227ec1", borderColor: "#227ec1", borderRadius: "30px" }}
+              onClick={() => setModalShow(true)}
+            >
               Enquiry
             </Button>
+
+
           </Nav>
 
           <motion.div
@@ -127,18 +134,22 @@ const MyOffcanvas = () => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item href="tel:+914224368813" className="d-flex align-items-center">
-                  <FaPhone className="me-2" /> +91 422 436 8813
-                </Dropdown.Item>
                 <Dropdown.Item href="tel:+919788525856" className="d-flex align-items-center">
                   <FaPhone className="me-2" /> +91 978 852 5856
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             {/* Enquiry Button in Offcanvas */}
-            <Button variant="outline-primary" className="mt-3 w-100" onClick={() => setModalShow(true)}>
+            <Button
+              variant="primary"
+              className="mx-2 text-white"
+              style={{ backgroundColor: "#227ec1", borderColor: "#227ec1", borderRadius: "30px" }}
+              onClick={() => setModalShow(true)}
+            >
               Enquiry
             </Button>
+
+
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>

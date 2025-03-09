@@ -739,15 +739,61 @@ hr {
 }
 }
 
-/* Enquiry Form Modal Styling */
-.modal-body {
-  padding: 20px;
+.enquiry-modal .modal-content {
+  background: linear-gradient(135deg, #f0f8ff, #e0e0e0); /* Light gradient background */
+  border-radius: 12px;
+  padding: 10px;
 }
 
-.form-control {
-  border-radius: 8px;
+.enquiry-modal .modal-header {
+  background: linear-gradient(135deg, #007bff, #6610f2); /* Blue to Purple Gradient */
+  color: white;
+  border-radius: 12px 12px 0 0;
+  border-bottom: none;
 }
 
-button {
+.enquiry-modal .modal-header .btn-close {
+  filter: invert(1); /* Makes the close button white */
+}
+
+.enquiry-modal .modal-title {
   font-weight: bold;
+  text-transform: uppercase;
+}
+
+.enquiry-modal .form-floating input {
+  border-radius: 8px;
+  border: 2px solid #ced4da;
+  transition: all 0.3s ease-in-out;
+}
+
+.enquiry-modal .form-floating input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.enquiry-modal .form-floating label {
+  color: #555;
+  font-weight: bold;
+}
+
+.enquiry-modal .form-floating input:focus + label {
+  color: #007bff;
+}
+
+.enquiry-modal .btn-primary {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Orange to Peach gradient */
+  border: none;
+  font-weight: bold;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.enquiry-modal .btn-primary:hover {
+  background: linear-gradient(90deg, #ff5733, #ffae42); /* Darker gradient on hover */
+  transform: scale(1.05);
+}
+
+.enquiry-modal .spinner-border {
+  color: white;
 }
