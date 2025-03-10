@@ -25,7 +25,7 @@ export default function App() {
         <Route path="/about" element={<Layout><Aboutus /></Layout>} />
         <Route path="/services" element={<Layout><ZigZagLayout /></Layout>} />
         <Route path="/our-work" element={<Layout><CustomSlider /></Layout>} />
-        <Route path="/contact" element={<Contact/>} />
+        <Route path="/contact" element={<Layout><Contact/></Layout>} />
       </Routes>
       <ScrollIndicator/>
     </Router>

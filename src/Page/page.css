@@ -258,108 +258,10 @@
 
 /* contact */
 .contact-page {
-  padding: 40px 0;
-}
-
-/* Styling for Contact and Social Media Cards */
-.contact-card, .social-card, .map-card {
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  background: #fff;
-}
-
-/* Social Media Icons */
-@media (max-width: 768px) {
-  .map-card-col{
-    padding-top: 30px;
-  }
-}
-.contact-page {
-  font-family: var(--font1);
-  padding: 30px 0;
-}
-
-/* Card Styling */
-.custom-card {
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in;
-  border-radius: 10px;
-  border: 2px solid rgb(105, 104, 104);
-}
-
-.custom-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  background-color: #D9EAFD;
-}
-
-.contact-page .card p {
-  font-size: 16px;
-  color: #333;
-}
-
-.contact-page .card h4,
-.contact-page .card h5 {
-  color: #333;
-}
-
-/* Contact Details Icon Colors */
-
-
-.contact-page .text-danger {
-  color: #dc3545 !important;
-}
-
-.contact-page .text-info {
-  color: #ff0000 !important;
-}
-
-/* Back Button */
-.contact-page h5 a {
-  transition: color 0.3s ease-in-out;
-}
-
-.contact-page h5 a:hover {
-  color: #237fc0 !important;
-}
-
-/* Social Media Icons */
-.contact-page .social-icons {
-  display: flex;
-  gap: 15px;
-}
-
-.contact-page .social-icons .fa {
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-.contact-map{
-  border: 2px solid  rgb(105, 104, 104);
-}
-
-/* Google Map Frame */
-.contact-page iframe {
-  border-radius: 10px;
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-.contact-page iframe:hover {
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-}
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px; /* Default gap between icon and text */
-  text-decoration: none;
-  color: #333;
-  transition: gap 0.3s ease-in-out;
+  padding:40px 0;
 }
 
 
-/* Move only the icon left */
-.back-link:hover .back-icon {
-  transform: translateX(-3px) !important;
-  transition: transform 0.3s ease-in-out;
-}
 /* Scroll-To-Top Button */
 .scroll-to-top {
   position: fixed;
@@ -463,3 +365,74 @@
 }
 .dropdown .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
   color: white}
+
+
+
+  /* page.css */
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+}
+
+.line {
+  display: inline-block;
+  width: 50px;
+  height: 4px;
+  background-color: #007bff;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+
+.contact-page {
+  padding: 40px 0;
+}
+
+.back-link {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.back-link:hover {
+  color: #007bff;
+}
+
+.custom-card {
+  border-radius: 10px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-page a {
+  transition: color 0.3s ease;
+}
+
+.contact-page a:hover {
+  color: #007bff;
+}
+
+footer {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .heading {
+      font-size: 1.8rem;
+  }
+
+  .custom-card {
+      padding: 1rem;
+  }
+}
