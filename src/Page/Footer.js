@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaSearchLocation } from "react-icons/fa";
 import { Container, Row, Col } from "react-bootstrap";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 export default function Footer() {
     return (
@@ -111,12 +111,18 @@ export default function Footer() {
 
                                 {/* Phone */}
                                 <p className="d-flex align-items-center justify-text">
-                                    <FaPhone className="me-2 calls flex-shrink-0" />
+                                    <FaPhoneAlt className="me-2 calls flex-shrink-0" />
                                     <a
                                         href="tel:+9104224368813"
                                         className="text-dark ps-1 text-decoration-none"
                                     >
                                         04224368813
+                                    </a> {" "} /
+                                    <a
+                                        href="tel:+919788525856"
+                                        className="text-dark ps-1 text-decoration-none"
+                                    >
+                                        +91 9788525856
                                     </a>
                                 </p>
 

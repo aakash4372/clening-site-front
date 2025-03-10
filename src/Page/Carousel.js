@@ -63,7 +63,7 @@ export default function Carousel() {
 
 <div id="carouselExample" class="carousel slide carousel-fade" 
      data-bs-touch="true"  data-bs-pause="false"  
-     data-bs-ride="carousel" data-bs-interval="3000">
+     data-bs-ride="carousel" data-bs-interval="4000">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src={`${process.env.PUBLIC_URL}/img/C.png`} class="d-block w-100" alt="Imagefile 1"/>
