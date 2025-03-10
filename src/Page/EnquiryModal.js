@@ -4,6 +4,7 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
 const EnquiryModal = ({ show, handleClose }) => {
+  var baseurl = process.env.REACT_APP_BASIC_URL;
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -37,10 +38,7 @@ const EnquiryModal = ({ show, handleClose }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post(
-        "https://cleaning-site-full-back.onrender.com/send-email",
-        formData
-      );
+      const response = await axios.post(`${baseurl}/send-email`, formData);
       toast.success(response.data.message || "Enquiry sent successfully!");
       setFormData({ name: "", phone: "", email: "", type: "", location: "" });
       handleClose();
