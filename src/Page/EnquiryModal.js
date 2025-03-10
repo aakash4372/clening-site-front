@@ -14,6 +14,21 @@ const EnquiryModal = ({ show, handleClose }) => {
 
   const [loading, setLoading] = useState(false);
 
+  const cleaningServices = [
+    "Carpet Shampoo Cleaning",
+    "Residential Cleaning",
+    "Industrial Cleaning",
+    "Bathroom Deep Cleaning",
+    "Deep Cleaning Service",
+    "Tiles Cleaning",
+    "Commercial Cleaning",
+    "Sofa Cleaning",
+    "Glass Cleaning",
+    "Kitchen Cleaning",
+    "House Cleaning",
+    "Others",
+  ];
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -26,7 +41,6 @@ const EnquiryModal = ({ show, handleClose }) => {
         "https://education-site-full-back.onrender.com/send-email",
         formData
       );
-
       toast.success(response.data.message || "Enquiry sent successfully!");
       setFormData({ name: "", phone: "", email: "", type: "", location: "" });
       handleClose();
@@ -41,7 +55,6 @@ const EnquiryModal = ({ show, handleClose }) => {
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
-
       <Modal show={show} onHide={handleClose} centered className="enquiry-modal">
         <Modal.Header closeButton>
           <Modal.Title>Enquiry Form</Modal.Title>
@@ -84,17 +97,20 @@ const EnquiryModal = ({ show, handleClose }) => {
               <Form.Label>Email</Form.Label>
             </Form.Floating>
 
-            <Form.Floating className="mb-3">
-              <Form.Control
-                type="text"
+            <Form.Group className="mb-3">
+              <Form.Label>Type</Form.Label>
+              <Form.Select
                 name="type"
-                placeholder="Enter type"
                 value={formData.type}
                 onChange={handleChange}
                 required
-              />
-              <Form.Label>Type</Form.Label>
-            </Form.Floating>
+              >
+                <option value="">Select Cleaning Type</option>
+                {cleaningServices.map((service, index) => (
+                  <option key={index} value={service}>{service}</option>
+                ))}
+              </Form.Select>
+            </Form.Group>
 
             <Form.Floating className="mb-3">
               <Form.Control
