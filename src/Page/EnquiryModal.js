@@ -38,7 +38,7 @@ const EnquiryModal = ({ show, handleClose }) => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://education-site-full-back.onrender.com/send-email",
+        "https://cleaning-site-full-back.onrender.com/send-email",
         formData
       );
       toast.success(response.data.message || "Enquiry sent successfully!");
